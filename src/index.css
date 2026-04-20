@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "sans-serif";
+  --font-display: "Outfit", "sans-serif";
+  --color-slate-950: #0a0a0c;
+  --color-serious-blue: #3b82f6;
+  --color-brand-brown: #8d6e63;
+  --color-steel-slate: #7d5b41;
+  --color-silver-light: #e0d8d5;
+}
+
+:root {
+  --bg-matte: #0d0d0d;
+  --accent-steel: #7d5b41;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-matte);
+  color: var(--color-silver-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Seamless Borders (only subtle lines) */
+.border-seamless {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.text-silver {
+  color: var(--color-silver-light);
+}
+
+.text-steel {
+  color: var(--color-steel-slate);
+}
+
+/* Minimalist Button */
+@utility boton-minimal {
+  @apply px-8 py-2.5 border border-steel-slate/30 text-silver-light rounded-sm hover:bg-white hover:text-black transition-all duration-300 font-medium tracking-wide uppercase text-sm;
+}
+
+.enlace-menu {
+  @apply text-steel-slate hover:text-white transition-colors duration-300 relative py-1;
+}
+
+.enlace-menu::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300;
+}
+
+.enlace-menu:hover::after {
+  @apply w-full;
+}
